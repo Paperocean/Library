@@ -170,7 +170,9 @@ void loadBookData(map<int, unique_ptr<Book>>& books) {
         }
     }
     else {
-        cout << "File doesn't exist" << endl;
+        cout << "Creating file with deleted books..." << endl;
+        ofstream new_file(bookDeletedNums);
+        new_file.close();
     }
     in_file.close();
 }
@@ -310,7 +312,9 @@ void loadUserData(map<int, unique_ptr<Person>>& person) {
         }
     }
     else {
-        cout << "User deleted numbers file doesn't exist" << endl;
+        cout << "Creating file with deleted users..." << endl;
+        ofstream new_file(userDeletedNums);
+        new_file.close();
     }
     in_file.close();
 }
